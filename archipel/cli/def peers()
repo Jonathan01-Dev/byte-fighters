@@ -1,0 +1,53 @@
+import typer
+from rich.table import Table
+from utils.logger import console, log_info
+
+# On récupère l'objet app créé au Sprint 0
+app = typer.Typer()
+
+@app.command()
+def peers():
+    """
+    Affiche la liste des voisins (peers) découverts sur le réseau Archipel 14.
+    """
+    log_info("Récupération de la liste des pairs...")
+
+    # 1. Création du tableau avec Rich
+    table = Table(title="🤝 Liste des Pairs Archipel 14", title_style="bold magenta")
+
+    # Ajout des colonnes demandées dans le projet
+    table.add_column("Node ID", justify="center", style="cyan", no_wrap=True)
+    table.add_column("Adresse IP", style="white")
+    table.add_column("Port", justify="center", style="yellow")
+    table.add_column("Statut", justify="center")
+    table.add_column("Dernier contact", justify="right", style="green")
+
+    # 2. Liaison avec le module réseau (Simulation pour le moment)
+    # Plus tard, tu feras : from network.peer_table import get_all_peers
+    # peers_data = get_all_peers()
+    
+    # Données fictives pour tester ton affichage
+    peers_data = [
+        {
+            "id": "7a2f...91e0", 
+            "ip": "192.168.1.42", 
+            "port": "7777", 
+            "status": "🟢 Connecté", 
+        },
+        {
+            "id": "bc12...88a4", 
+            "ip": "10.0.0.5", 
+            "port": "7778", 
+            "status": "🔴 Hors-ligne", 
+        }
+    ]
+
+    # 3. Remplissage du tableau
+    if not peers_data:
+        console.print("[yellow]Aucun pair n'a été découvert pour le moment.[/yellow]")
+    else:
+        for p in peers_data:
+            table.add_row(p["id"], p["ip"], p["port"], p["status"], p["last"])
+        
+        # 4. Affichage final
+        console.print(table)
