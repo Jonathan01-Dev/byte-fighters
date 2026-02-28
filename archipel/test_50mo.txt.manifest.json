@@ -1,0 +1,22 @@
+{
+  "file_id": "4e29ad18ab9f42d7c233500771a39d7c852b200baf328fd00fbbe3fecea1eb56",
+  "filename": "test_50mo.txt",
+  "size": 1048576,
+  "chunk_size": 524288,
+  "nb_chunks": 2,
+  "chunks": [
+    {
+      "index": 0,
+      "hash": "5f7a26e1d78cd171b1aab0208da133e996c75285b94aa8ef06c6578ea0b26903",
+      "size": 524288
+    },
+    {
+      "index": 1,
+      "hash": "5f7a26e1d78cd171b1aab0208da133e996c75285b94aa8ef06c6578ea0b26903",
+      "size": 524288
+    }
+  ],
+  "sender_id": "a4536a72dddb3e942de019b4f18ddb8892d6f137abd31dc211bcf18265159c0b",
+  "timestamp": "1772275326",
+  "signature": "7022045eaa66708949849f822203167addbe7433944d44679840cdb476242cde73baf4271749eadd20886de79f0f7296eb7cbe083a9f03e6ff03884849303001"
+}
